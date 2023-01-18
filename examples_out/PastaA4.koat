@@ -1,0 +1,11 @@
+(GOAL COMPLEXITY)
+(STARTTERM (FUNCTIONSYMBOLS eval_main_start))
+(VAR VAR0 VAR1)
+(RULES
+  eval_main_start(VAR0, VAR1) -> eval_main_entry_in(VAR0, VAR1)
+  eval_main_entry_in(VAR0, VAR1) -> eval_main_while.cond_in(VAR0, VAR1)
+  eval_main_while.cond_in(VAR0, VAR1) -> eval_main_while.body_in(VAR0, VAR1) [ VAR0 > VAR1 ]
+  eval_main_while.cond_in(VAR0, VAR1) -> eval_main_while.end_in(VAR0, VAR1) [ VAR0 <= VAR1 ]
+  eval_main_while.body_in(VAR0, VAR1) -> eval_main_while.cond_in(VAR0, VAR1 + 1)
+  eval_main_while.end_in(VAR0, VAR1) -> eval_main_stop(VAR0, VAR1)
+)
